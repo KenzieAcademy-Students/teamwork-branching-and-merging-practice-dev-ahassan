@@ -77,7 +77,19 @@ function resetBoard() {}
 
 // This function will render the game board to the DOM.
 // It will completely delete the old DOM and create a new board after each move.  
-function renderBoard() {}
+function renderBoard() {
+  let board = document.getElementById("board");
+
+  let HTML = `<div class="grid">`
+  for (let row of dataModel.board) {
+    for (let cell of row) {
+      HTML += `<div class="cell number-${cell}">${(cell) ? cell : ""}</div>`
+    }
+  }
+  HTML += `</div>`
+
+  board.innerHTML = HTML;
+}
 
 // When any of the move functions are done, they should call this.  
 function afterMove() {
@@ -95,3 +107,11 @@ function startGame() {
   renderBoard();
 }
 startGame();
+
+
+
+
+
+
+
+// Shouldn't be any issues unless we try to merge this line!
