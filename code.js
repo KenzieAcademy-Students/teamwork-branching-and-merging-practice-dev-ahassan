@@ -32,15 +32,15 @@ function resetBoard() {}
 function renderBoard() {
   let board = document.getElementById("board");
 
-  let html = `<div class="grid">`
+  let HTML = `<div class="grid">`
   for (let row of dataModel.board) {
     for (let cell of row) {
-      html += `<div class="cell number-${cell}">${(cell) ? cell : ""}</div>`
+      HTML += `<div class="cell number-${cell}">${(cell) ? cell : ""}</div>`
     }
   }
-  html += `</div>`
+  HTML += `</div>`
 
-  board.innerHTML = html;
+  board.innerHTML = HTML;
 }
 
 // When any of the move functions are done, they should call this.  
